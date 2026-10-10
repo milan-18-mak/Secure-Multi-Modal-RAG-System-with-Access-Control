@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure AI RAG Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Secure AI RAG Chatbot</h1>
+            <div class="user-info">
+                <span id="user-display">Not logged in</span>
+                <button id="logout-btn" class="btn btn-secondary" style="display:none;">Logout</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="chat-panel">
+                <div class="panel-header">
+                    <h2>Chat</h2>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message system">
+                        <div class="message-content">
+                            Welcome! Log in to start chatting with the secure RAG chatbot.
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <form id="chat-form">
+                        <input type="text" id="message-input" placeholder="Ask your question..." disabled>
+                        <button type="submit" id="send-btn" class="btn btn-primary" disabled>Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="side-panels">
+                <div class="panel sources-panel">
+                    <div class="panel-header">
+                        <h2>Retrieved Authorized Sources</h2>
+                    </div>
+                    <div class="panel-content" id="sources-list">
+                        <p class="empty-state">No sources retrieved yet</p>
+                    </div>
+                </div>
+
+                <div class="panel auth-panel">
+                    <div class="panel-header">
+                        <h2>Authorization</h2>
+                    </div>
+                    <div class="panel-content" id="auth-info">
+                        <p class="empty-state">Log in to see authorization info</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-modal" id="login-modal">
+            <div class="modal-content">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div class="demo-users">
+                    <h3>Demo Users</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Username</th><th>Password</th><th>Role</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>admin</td><td>admin123</td><td>admin</td></tr>
+                            <tr><td>hr</td><td>hr123</td><td>hr</td></tr>
+                            <tr><td>engineering</td><td>engineering123</td><td>engineering</td></tr>
+                            <tr><td>finance</td><td>finance123</td><td>finance</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
